@@ -24,7 +24,7 @@ GET `/pve/formation`
 ```
 IPlayer
 {
-	tokenId: number;
+    tokenId: number;
     name: string;
     image: string;
     nation: string;
@@ -34,6 +34,8 @@ IPlayer
     };
     rating: number;
     type: string;
+    level: number;
+    exp: number;
     rank: "normal" | "professional" | "expert" | "super star";
     attributes: {
         atk: number;
@@ -72,24 +74,40 @@ POST `/pve/start`
     result: {
     	win: boolean,
         tokenBonus: number,
- 		tokenLoss: number
+ 	tokenLoss: number
     }
 }
 ```
 
 #### NFT
 
+GET `/nft/mint/:walletAddress`
+- mint nft (DEV ONLY)
+- response: `{}`
+
 GET `/nft/list`
 - get list of user nfts
 - header: `Authorization: accessToken`
 - response: `IPlayer[]`
 
+GET `/nft/metadata/:tokenId`
+- get metadata of NFT (for marketplace)
+- response: `IMetadata`
+```
+IMetadata
+{
+    name: string;
+    description: string;
+    image: string;
+    attributes: TAttributes;
+}
+```
 
-PATCH `/nft/level/up`
+PATCH `/nft/level/up/:tokenId`
 - up level of NFT
 - header: `Authorization: accessToken`
-- request: `{ tokenId: number }`
-- response: `IPlayer[]`
+- response: `IPlayer`
 
 GET `/nft/level/cost`
 - up cost for up level of NFT
+- response: `{ level: number, exp: number, token: number }`
