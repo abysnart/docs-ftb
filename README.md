@@ -16,10 +16,15 @@ GET `/user/balances`
 
 #### PVE
 
+GET `/pve/season`
+- get current season number and matches.
+- header: `Authorization: accessToken`
+- response: ` { number: number, match: number }`
+
 GET `/pve/formation`
 - get lasted formation of PVE team.
 - header: `Authorization: accessToken`
-- response: `{ power: number, team: IPlayer[], arrange: number[] }`
+- response: `{ team: IPlayer[], arrange: number[] }`
 - interfaces: 
 ```
 IPlayer
