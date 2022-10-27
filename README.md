@@ -3,7 +3,7 @@
 #### Market
 GET `/market/orders`
 - get order list for homepage
-- response: IOrderCreatedEvent && IPlayer
+- response: `IOrderCreatedEvent && IPlayer`
 ```
 IOrderCreatedEvent
 {
@@ -18,7 +18,7 @@ IOrderCreatedEvent
 
 GET `/market/history/:tokenId`
 - get trading history for a tokenId
-- response: IOrderTakenEvent && IPlayer
+- response: `IOrderTakenEvent && IPlayer`
 ```
 IOrderTakenEvent
 {
@@ -58,7 +58,7 @@ GET `/user/balances`
 GET `/pve/season`
 - get current season number and matches.
 - header: `Authorization: accessToken`
-- response: ` { number: number, match: number }`
+- response: ` { number: number, match: number, total: number }`
 
 GET `/pve/formation`
 - get lasted formation of PVE team.
