@@ -1,8 +1,47 @@
 ### API Endpoints
 
+#### Market
+GET `/market/orders`
+- get order list for homepage
+- response: IOrderCreatedEvent && IPlayer
+```
+IOrderCreatedEvent
+{
+    transactionHash: string,
+    tokenId: number,
+    orderId: number,
+    createdTime: number,
+    creator: string,
+    targetPrice: number
+}
+```
+
+GET `/market/history/:tokenId`
+- get trading history for a tokenId
+- response: IOrderTakenEvent && IPlayer
+```
+IOrderTakenEvent
+{
+    transactionHash: string,
+    buyer: string,
+    seller: string,
+    totalPrice: number,
+    orderId: number
+}
+```
+
+POST `/user/login`
+- request: `{ walletAddress: string, sign: string }`
+- response: `{ accessToken: string }`
+
+GET `/user/balances`
+- get user token balances.
+- header: `Authorization: accessToken`
+- response: `{ token: number }`
+
+
 #### User
 GET `/user/nonce/:walletAddress`
-
 - call when connect wallet to get nonce for signing.
 
 POST `/user/login`
