@@ -53,6 +53,12 @@ GET `/user/balances`
 - header: `Authorization: accessToken`
 - response: `{ token: number }`
 
+POST `/user/withdrawal`
+- withdraw token to wallet.
+- header: `Authorization: accessToken`
+- request: `{ amount: number }`
+- response: `{ nonce: string, address: string, signature: string, amount: string }`
+
 #### PVE
 
 GET `/pve/season`
