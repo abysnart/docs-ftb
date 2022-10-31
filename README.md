@@ -30,16 +30,6 @@ IOrderTakenEvent
 }
 ```
 
-POST `/user/login`
-- request: `{ walletAddress: string, sign: string }`
-- response: `{ accessToken: string }`
-
-GET `/user/balances`
-- get user token balances.
-- header: `Authorization: accessToken`
-- response: `{ token: number }`
-
-
 #### User
 GET `/user/nonce/:walletAddress`
 - call when connect wallet to get nonce for signing.
@@ -130,10 +120,6 @@ POST `/pve/start`
 ```
 
 #### NFT
-
-GET `/nft/mint/:walletAddress`
-- mint nft (DEV ONLY)
-- response: `{}`
 
 GET `/nft/list`
 - get list of user nfts
