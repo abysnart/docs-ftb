@@ -1,7 +1,7 @@
 ### API Endpoints
 
 #### Market
-GET `/market/orders`
+GET `/market/orders?name=Ronaldo&rank=expert`
 - get order list for homepage
 - response: `IOrderCreatedEvent && IPlayer`
 ```
