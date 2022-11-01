@@ -8,11 +8,11 @@ GET `/market/orders?name=Ronaldo&rank=expert&page=2&limit=10`
 IOrderCreatedEvent
 {
     transactionHash: string,
-    tokenId: number,
-    orderId: number,
-    createdTime: number,
+    tokenId: string,
+    orderId: string,
+    createdTime: string,
     creator: string,
-    targetPrice: number
+    targetPrice: string
 }
 ```
 
@@ -25,8 +25,8 @@ IOrderTakenEvent
     transactionHash: string,
     buyer: string,
     seller: string,
-    totalPrice: number,
-    orderId: number
+    totalPrice: string,
+    orderId: string
 }
 ```
 
