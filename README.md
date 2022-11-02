@@ -26,7 +26,8 @@ IOrderTakenEvent
     buyer: string,
     seller: string,
     totalPrice: string,
-    orderId: string
+    orderId: string,
+    time: number
 }
 ```
 
