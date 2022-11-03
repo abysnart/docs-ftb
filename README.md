@@ -45,10 +45,15 @@ GET `/user/balances`
 - response: `{ token: number }`
 
 POST `/user/withdrawal`
-- withdraw token to wallet.
+- withdraw 3% of token to wallet per day.
 - header: `Authorization: accessToken`
-- request: `{ amount: number }`
 - response: `{ nonce: string, address: string, signature: string, amount: string }`
+
+POST `/user/withdrawal/all`
+- withdraw all token to wallet.
+- header: `Authorization: accessToken`
+- response: `{ nonce: string, address: string, signature: string, amount: string }`
+
 
 #### PVE
 
