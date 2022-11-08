@@ -44,6 +44,10 @@ GET `/user/balances`
 - header: `Authorization: accessToken`
 - response: `{ token: number }`
 
+GET `/user/balances/history`
+- get user balances history.
+- header: `Authorization: accessToken`
+
 POST `/user/withdrawal`
 - withdraw 3% of token to wallet per day.
 - header: `Authorization: accessToken`
