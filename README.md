@@ -61,6 +61,16 @@ POST `/user/withdrawal/all`
 
 #### PVE
 
+GET `/pve/reward`
+- get rewards unclaim.
+- header: `Authorization: accessToken`
+- response: `string[]`
+
+POST `/pve/reward/claim/:nonce`
+- claim reward.
+- header: `Authorization: accessToken`
+- response: `{ nonce: string, address: string, signature: string }`
+
 GET `/pve/season`
 - get current season number and matches.
 - header: `Authorization: accessToken`
